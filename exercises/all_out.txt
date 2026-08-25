@@ -1,0 +1,11 @@
+ls: cannot access '/nonexistent': No such file or directory
+/tmp:
+config-err-vVjmwY
+gnome-software-QPTEU3
+systemd-private-eec8dc2894454e4481e39e08d7f52123-colord.service-KYgn1N
+systemd-private-eec8dc2894454e4481e39e08d7f52123-fwupd.service-V7X0lm
+systemd-private-eec8dc2894454e4481e39e08d7f52123-rtkit-daemon.service-4Xh22r
+systemd-private-eec8dc2894454e4481e39e08d7f52123-systemd-timesyncd.service-xlHmmg
+unity_support_test.0
+VMwareDnD
+vmware-root
