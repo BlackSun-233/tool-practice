@@ -247,3 +247,39 @@ debug.sh     out_err.txt           test_glob
  `$`(命令)  是命令替换，会先执行括号内命令，把输出结果嵌入到当前命令行。
 
 这里 date 输出当前日期，拼接成带时间戳的备份文件名。
+
+
+## 题目11：可接收参数的`flaky‑test`脚本
+
+命令：
+```bash
+#!/bin/bash
+until "$@"; do
+    echo "测试失败，正在重试……"
+done
+echo "测试执行成功！"
+```
+
+问题：修改 `flaky‑test` 脚本，不从脚本内写死测试命令，而是从命令行接收待执行的测试命令。
+
+
+回答：
+`$@`代表脚本接收的全部命令行参数，将外部传入的整条命令交给 `until` 循环执行。
+`until` 循环逻辑：后面命令退出码非 0（失败）就反复循环执行；命令返回 0（成功），循环结束。
+
+
+输出结果：
+```bash
+# 失败测试，不断重试，Ctrl‑C终止
+./flaky.sh ls no_exist_file
+ls: cannot access 'no_exist_file': No such file or directory
+测试失败，正在重试……
+ls: cannot access 'no_exist_file': No such file or directory
+测试失败，正在重试……
+^C
+
+# 成功测试
+./flaky.sh ls
+all_out.txt  check.sh  debug.sh  flaky.sh  notes.txt  notes_2026-08-24.txt  out_err.txt  out_std.txt  shell_hw.md  test_glob
+测试执行成功！
+```
