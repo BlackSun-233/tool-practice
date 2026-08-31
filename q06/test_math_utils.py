@@ -1,4 +1,5 @@
-from math_utils import total_price
+from math_utils import calculate_total
+
 
 def test_total_price():
-    assert total_price(12.5, 4) == 50.0
+    assert calculate_total(12.5, 4) == 50.0

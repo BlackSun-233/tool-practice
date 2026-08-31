@@ -1,2 +1,2 @@
-def total_price(price: float, count: int) -> float:
+def calculate_total(price: float, count: int) -> float:
     return price * count
