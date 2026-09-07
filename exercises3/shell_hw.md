@@ -19,7 +19,7 @@ deactivate
 ```
 
 输出结果：
-`diff`：`PATH` 头部插入 `venv_demo/bin`，新增 `VIRTUAL_ENV` 变量
+1. `diff`：`PATH` 头部插入 `venv_demo/bin`，新增 `VIRTUAL_ENV` 变量
 ```bash
 27a28
 > VIRTUAL_ENV=/home/yczhang/tool-practice/exercises3/venv_demo
@@ -33,10 +33,10 @@ deactivate
 <
 ```
 
-`which deactivate`：无输出
+2. `which deactivate`：无输出
 
 
-`type deactivate`：显示 `deactivate` 为 `shell` 函数，来自 `activate` 脚本
+3. `type deactivate`：显示 `deactivate` 为 `shell` 函数，来自 `activate` 脚本
 ```bash
 deactivate is a function
 deactivate () 
@@ -66,6 +66,8 @@ deactivate ()
 ```
 解释：
 `Shell` 查找命令按照 `PATH` 从前向后匹配，虚拟环境把自身 `bin` 目录前置，优先调用项目内 Python 工具，不和系统依赖冲突；`deactivate` 函数复原 `PATH`、清除环境变量，完成退出。
+
+
 
 
 ## 练习2 `pyproject.toml`小包与锁文件
@@ -118,6 +120,8 @@ build  demo_pkg  demo_pkg.egg-info  pyproject.toml  requirements.txt
 解释：`pyproject.toml` 是现代 Python 项目配置文件；锁文件可以锁定全部依赖的确切版本，保证多环境安装依赖完全一致。
 
 
+
+
 ## 练习3 手动编码与AI自动补全体验对比
 
 问题：把同一编程任务分别用手动编码、AI自动补全各做一次，比较体验差异。
@@ -159,6 +163,8 @@ if __name__ == "__main__":
 
 解释:手写版本变量名简单，省略文档字符串与主程序入口；AI 生成代码附带注释、文档字符串，结构更规范。AI 可以快速产出可用代码，但仍需要人工验证结果正确性。
 
+
+
 ## 练习4 AI修改Markdown无序列表
 
 问题：用编程智能体完成Markdown无序列表正则表达式练习。观察：它是否直接编辑文件？直接编辑文件有什么缺点？尝试让AI不直接写文件，调用命令行工具完成任务。
@@ -183,6 +189,8 @@ cat list_test.md
 - 香蕉
 - 橙子
 ```
+
+
 
 ## 练习 5：Docker Compose 本地构建 Missing‑Semester 课程网站
 问题：安装 Docker，用 `docker compose` 本地部署 Missing Semester 网站。
@@ -223,6 +231,8 @@ fatal: Could not connect to server
 
 
 解决：物理机下载 `zip` 包传入虚拟机解压，再执行 `compose` 启动。
+
+
 
 
 
@@ -269,6 +279,8 @@ lookup docker.mirrors.ustc.edu.cn on 127.0.0.53: no such host
 3. 项目配置文件逻辑正确，网络条件正常环境下可以运行。
 
 
+
+
 ## 练习7 `ghcr.io`
 问题：发布 Python 包到 TestPyPI，构建 `Docker` 镜像推送到 `ghcr.io`。
 
@@ -303,6 +315,8 @@ tag does not exist: ghcr.io/blacksun-233/demo-pkg:v0.0.1
 
 
 3. 配置文件逻辑正确，网络正常环境可以完成构建与推送。
+
+
 
 
 ## 练习8 使用GitHub Pages创建网站
@@ -351,6 +365,8 @@ index.html源码：
 
 
 2. Pages 服务读取指定分支下的静态网页文件，直接对外提供访问，不需要后端服务。
+
+
 
 
 ## 练习9 `git log` 查看提交历史，`git show` 查看提交改动

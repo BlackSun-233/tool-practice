@@ -1,0 +1,20 @@
+# ========== Python 相关忽略 ==========
+venv*/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# ========== 练习临时输出文件 ==========
+before.txt
+after.txt
+*.tmp
+*.log
+
+# ========== 编辑器 / 系统垃圾 ==========
+.DS_Store
+*.swp
+*~
