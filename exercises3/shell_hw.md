@@ -1,5 +1,5 @@
 # Shell第三周练习（共11题）
-## 练习1：`venv`环境变量对比
+## 练习1： `venv`环境变量对比
 问题：将环境保存到文件中，创建一个`venv`，激活它，将其保存到另一个文件并`diff before.txt after.txt`。环境发生了什么变化？为什么`shell`更喜欢`venv`？查看激活前后的`$PATH`。运行`which deactivate`并解释`deactivate bash`函数的作用。
 
 
@@ -70,7 +70,7 @@ deactivate ()
 
 
 
-## 练习2 `pyproject.toml`小包与锁文件
+## 练习2： `pyproject.toml`小包与锁文件
 
 问题：创建一个Python包并安装到虚拟环境中。创建一个锁文件并检查它。
 
@@ -122,7 +122,7 @@ build  demo_pkg  demo_pkg.egg-info  pyproject.toml  requirements.txt
 
 
 
-## 练习3 手动编码与AI自动补全体验对比
+## 练习3： 手动编码与AI自动补全体验对比
 
 问题：把同一编程任务分别用手动编码、AI自动补全各做一次，比较体验差异。
 
@@ -165,7 +165,7 @@ if __name__ == "__main__":
 
 
 
-## 练习4 AI修改Markdown无序列表
+## 练习4： AI修改Markdown无序列表
 
 问题：用编程智能体完成Markdown无序列表正则表达式练习。观察：它是否直接编辑文件？直接编辑文件有什么缺点？尝试让AI不直接写文件，调用命令行工具完成任务。
 
@@ -192,7 +192,7 @@ cat list_test.md
 
 
 
-## 练习 5：Docker Compose 本地构建 Missing‑Semester 课程网站
+## 练习5： Docker Compose 本地构建 Missing‑Semester 课程网站
 问题：安装 Docker，用 `docker compose` 本地部署 Missing Semester 网站。
 
 
@@ -236,7 +236,7 @@ fatal: Could not connect to server
 
 
 
-## 练习 6：`docker‑compose.yml` 运行 `Python+Redis` 缓存
+## 练习6： `docker‑compose.yml` 运行 `Python+Redis` 缓存
 
 问题：编写 `Dockerfile` 与 `docker‑compose.yml`，编排 Python 应用与 Redis 容器。
 
@@ -281,7 +281,7 @@ lookup docker.mirrors.ustc.edu.cn on 127.0.0.53: no such host
 
 
 
-## 练习7 `ghcr.io`
+## 练习7： `ghcr.io`
 问题：发布 Python 包到 TestPyPI，构建 `Docker` 镜像推送到 `ghcr.io`。
 
 
@@ -319,7 +319,7 @@ tag does not exist: ghcr.io/blacksun-233/demo-pkg:v0.0.1
 
 
 
-## 练习8 使用GitHub Pages创建网站
+## 练习8： 使用GitHub Pages创建网站
 问题：使用 GitHub Pages 创建网站。使用自定义域名配置它(附）。
 
 回答：创建名称为`BlackSun‑233.github.io`的公开仓库，本地编写简单静态 `HTML` 首页，通过 Git 将代码推送到仓库 main 分支。在仓库设置中开启 GitHub Pages，部署源选择 `main` 分支根目录`/(root)`，站点部署完成，可以通过公网链接正常访问静态页面.
@@ -369,7 +369,7 @@ index.html源码：
 
 
 
-## 练习9 `git log` 查看提交历史，`git show` 查看提交改动
+## 练习9： `git log` 查看提交历史，`git show` 查看提交改动
 问题：使用 `git log` 查看项目提交历史，查看某次提交的具体改动。
 
 
@@ -456,3 +456,86 @@ index 83baae6..0c1e739 100644
 
 
 3. `diff` 格式中，`+`代表本次新增行，`‑`代表删除行，可以直观看到每次提交修改了什么内容。
+
+
+
+## 练习10： GitHub项目README对比与good first issue分析
+问题：对比三个 1000+ star 的 GitHub 项目的 README。它们都同样有用吗？找出哪些内容在你看来主要是噪音，为你将来写 README 提供借鉴。
+
+
+回答：
+
+我选取 ripgrep、fd、eza 三个高 star 开源项目阅读它们的 README。三份文档整体质量都很高，都能够完整传递项目信息，但在内容排布上存在差异。
+
+
+1. ripgrep 的文档非常精炼，开篇直接介绍项目用途，紧接着给出安装命令和使用示例，几乎没有多余装饰，用户可以快速获取关键信息。
+
+
+2. fd 的文档兼顾可读性与丰富度，只保留少量必要徽章，示例清晰，同时说明了版本间的变化，对新手友好。
+
+
+3. eza 的 README 内容同样完整可用，但文档头部堆砌了大量状态徽章与装饰图片，需要向下滚动才能看到项目介绍与安装步骤。
+
+
+有价值的内容：
+
+
+1. 简短项目简介，清晰说明项目解决的痛点。
+
+
+2. 多平台一键复制的安装指令。
+
+
+3. 简短可复现的使用示例。
+
+
+4. 核心功能特性列表。
+
+
+5. 常见问题与故障排查。
+
+
+
+
+相对冗余（噪音）的内容：
+
+
+这些内容本身具备意义，但不适合放在文档最开头：
+
+
+1. 大量 CI、版本、许可证徽章。
+
+
+2. 装饰性 banner 图片。
+
+
+3. 面向开发者的内部细节。并不是说这些内容不应该存在，只是不应该抢占普通用户的第一屏。
+
+
+
+
+借鉴经验：
+
+
+写 README 时，第一屏优先面向使用者，把简介、安装、示例放在最前面；徽章、开发相关内容放到文档后半部分。保证新用户打开页面第一眼就能明白这个项目能做什么。
+
+
+## 练习11： pandas仓库issue评估
+问题：在一个你使用的项目中找一个未解决 issue（如果有的话，可以看 “good first issue” 或 “help wanted” 标签）。根据讲义中的标准评估它：它是否尊重维护者的时间、包含所有必要信息，还是你预期维护者需要和提交者来回追问多轮才能找到根源？
+
+
+回答：
+
+我选取 pandas 仓库 #65608 号 issue，状态为 Open，属于 bug 报告。
+
+
+提交者完成了前置自查，确认该问题没有被重复上报，同时确认 bug 在最新版本和 main 分支可以复现。工单提供了完整可复制运行的复现代码，写明预期输出、实际错误现象，还标注了 bug 出现的版本范围。
+
+
+这份 issue 信息完整充分，充分尊重维护者的时间。维护者直接复制代码即可复现问题，不需要反复询问提交者环境、复现步骤。
+
+
+对比质量较差的 issue 示例：只简单写 “Timedelta 有 bug”，不提供版本、复现代码。维护者就需要多次来回提问，才能定位问题。
+
+
+高质量 bug issue 应当包含：问题描述、环境版本、可运行复现代码、预期行为、实际结果。
